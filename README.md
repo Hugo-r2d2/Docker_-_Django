@@ -1,26 +1,46 @@
-# Docker_-_Django
+Docker e Django
+Este guia fornece instruções para a instalação e utilização de um projeto Django utilizando Docker. Siga os passos abaixo para configurar seu ambiente de desenvolvimento.
 
-Para instalação e utilização do Projeto faça os seguintes passos:
- 
- 1. Verifique a instalação do python na sua máquina;
- 2. Utilizando seu  terminal digite:
-    - python3 -m venv venv
+Pré-requisitos
+Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-    - source venv/bin/activate
- 
-    - Isso criará uma pasta para utilização de um ambiente virtual no seu python e também ativará o mesmo
- 
- 4. Verifique a instalação do Docker na sua máquina;
- 5. Digite o seguinte comando no terminal do diretório do projeto:
-    - docker build -t NomeDaImagem .
-      
-    - Isso criará uma imagem com base no Dockerfile já encontrado no projeto
-    
-    - docker run -d -p 8000:8000 --name django NomeDaImagem
-    
-    - Isso criará um container no docker que utilizará a imagem feita anteriormente e também usará a porta 8000
-    
-  6. Feito tudo isso você poderá acessar "http://localhost:8000" e verá a mensagem que colocamos nas urls 
-  
-  
-  
+Python
+Docker
+Passo a Passo
+1. Configurar o Ambiente Virtual
+1.1. Verifique a instalação do Python:
+
+bash
+Copiar código
+python3 --version
+1.2. Crie e ative um ambiente virtual:
+
+bash
+Copiar código
+python3 -m venv venv
+source venv/bin/activate
+Isso criará uma pasta chamada venv para o ambiente virtual e ativará o mesmo.
+
+2. Construir a Imagem Docker
+2.1. No diretório do projeto, execute o seguinte comando para construir a imagem Docker:
+
+bash
+Copiar código
+docker build -t NomeDaImagem .
+Isso criará uma imagem baseada no Dockerfile presente no projeto.
+
+3. Executar o Container Docker
+3.1. Execute o container utilizando a imagem criada anteriormente:
+
+bash
+Copiar código
+docker run -d -p 8000:8000 --name django NomeDaImagem
+Isso iniciará um container Docker com a imagem criada e mapeará a porta 8000 do container para a porta 8000 da sua máquina.
+
+4. Acessar a Aplicação
+4.1. Após seguir os passos acima, você poderá acessar a aplicação em:
+
+arduino
+Copiar código
+http://localhost:8000
+Você deverá ver a mensagem configurada nas URLs do projeto Django.
